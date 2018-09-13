@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# First, you must navigate to the folder containing the audio, e.g.
+# cd ./location/of/audio
+
+# Batch process the media, reduce noise, and store in converted directory
+for d in */
+do
+    cd ./$d
+    sox noise.wav -b 16 noise.wav remix 1,2
+    sox noise.wav -n noiseprof noise.prof
+    mkdir converted
+    for i in *.wav
+    do 
+        sox -S "$i" -b 16 converted/"$i" remix 1,2 noisered noise.prof 0.4
+    done
+    cd ..
+done
+
