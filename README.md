@@ -1,2 +1,2 @@
 # ACQDIV_Timing
-Prosodic features of child and caregiver speech in the ACQDIV corpus
+Tools for extracting prosodic features of child and caregiver speech in the ACQDIV corpus
